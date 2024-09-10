@@ -3,91 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Manutenção</title>
+    <title>Formulário Manutenção Germano Martins</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        form {
-            max-width: 600px;
-            margin: auto;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
-    <h2>Formulário de Manutenção</h2>
-    <form id="maintenanceForm">
-        <div class="form-group">
-            <label for="date">Data da Intervenção:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
-        <div class="form-group">
-            <label for="assistanceType">Tipo de Assistência:</label>
-            <select id="assistanceType" name="assistanceType" required>
-                <option value="">Selecione...</option>
-                <option value="preventiva">Preventiva</option>
-                <option value="corretiva">Corretiva</option>
-                <option value="emergencial">Emergencial</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="machineModel">Modelo da Máquina:</label>
-            <input type="text" id="machineModel" name="machineModel" required>
-        </div>
-        <div class="form-group">
-            <label for="serialNumber">Número de Série:</label>
-            <input type="text" id="serialNumber" name="serialNumber" required>
-        </div>
-        <div class="form-group">
-            <label for="company">Empresa Requerente:</label>
-            <input type="text" id="company" name="company" required>
-        </div>
-        <div class="form-group">
-            <label for="interventionDetails">Detalhes da Intervenção:</label>
-            <textarea id="interventionDetails" name="interventionDetails" rows="4" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="materialsUsed">Material Gasto:</label>
-            <input type="text" id="materialsUsed" name="materialsUsed">
-        </div>
-        <div class="form-group">
-            <label for="trips">Deslocações:</label>
-            <input type="number" id="trips" name="trips" min="0" required>
-        </div>
-        <button type="submit">Salvar</button>
-    </form>
-
-    <script>
-        document.getElementById('maintenanceForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Aqui podemos adicionar o código para salvar os dados, por exemplo, enviando para o servidor
-            alert('Formulário enviado com sucesso!');
-        });
-    </script>
+    <div class="container">
+        <h2>Formulário Manutenção Germano Martins</h2>
+        <form id="maintenanceForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-group">
+                <label for="date">Data da Intervenção:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="assistanceType">Tipo de Assistência:</label>
+                <select id="assistanceType" name="assistanceType" required>
+                    <option value="1">Formação</option>
+                    <option value="2">Instalação</option>
+                    <option value="3">Garantia</option>
+                    <option value="4">Manutenção</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Faturar:</label>
+                <div>
+                    <input type="checkbox" id="billYes" name="billing" value="1">
+                    <label for="billYes">Sim</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="billNo" name="billing" value="2">
+                    <label for="billNo">Não</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="machineModel">Modelo da Máquina:</label>
+                <input type="text" id="machineModel" name="machineModel" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="serialNumber">Número de Série:</label>
+                <input type="text" id="serialNumber" name="serialNumber" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Empresa Requerente:</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="details">Detalhes da Intervenção:</label>
+                <textarea id="details" name="details" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="materials">Material Gasto:</label>
+                <input type="text" id="materials" name="materials">
+            </div>
+            
+            <div class="form-group">
+                <label for="travel">Deslocações:</label>
+                <input type="text" id="travel" name="travel">
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
